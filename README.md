@@ -98,3 +98,43 @@ print("Training finished.")
 print("Generating and visualizing trajectories...")
 model.visualize_trajectories(num_points=50) # Visualize trajectories of 50 points
 print("Visualization complete.")
+
+
+
+
+
+
+
+
+
+
+
+
+
+**Key Changes and Styling:**
+
+1.  **Title:** Used a Level 1 Heading (`#`) and added relevant emojis.
+2.  **Badges:** Added a simple MIT License badge (you can add more like build status, PyPI version, etc., if applicable).
+3.  **Horizontal Rules:** Used `---` to visually separate major sections.
+4.  **Headings:** Used Level 2 (`##`) for main sections and Level 3 (`###`) for subsections within "Getting Started". Added emojis to section headers for visual appeal.
+5.  **Emphasis:** Used **bold** (`**bold**`) for key terms like "Hermite Schrödinger Bridge Matching", "Schrödinger Bridge problem", "sum-of-squares (SOS)", etc.
+6.  **Lists:** Used unordered lists (`*`) for Key Features and Prerequisites.
+7.  **Code Blocks:**
+    *   Used fenced code blocks (``` ```) for both shell commands (`bash`) and Python code (`python`).
+    *   Added comments within the Python example for clarity.
+    *   Made the GitHub clone URL a placeholder.
+    *   Added a note about `requirements.txt`.
+8.  **Inline Code:** Used backticks (`) for package names (`NumPy`, `PyTorch`), file names (`requirements.txt`, `LICENSE`), variables (`v_\theta(x)`), and commands (`git clone`).
+9.  **Mathematical Notation:**
+    *   Wrapped the mathematical formulas in `$$ ... $$` for block display.
+    *   Ensured LaTeX commands like `\min`, `\in`, `\mathcal{F}`, `\text{KL}`, `\|`, `\epsilon`, `^T`, `|x|^2/2` are preserved for rendering by Markdown processors that support MathJax or KaTeX.
+    *   Used inline math `$ ... $` for explaining the notation (`$H_K(x)$`, `$Q = LL^T$`, etc.).
+10. **References:** Formatted as a numbered list with consistent styling (bold title, italic publication venue).
+11. **License:** Linked the word "LICENSE" to a `LICENSE` file (assuming one exists in the root of the repository).
+
+Remember to:
+
+*   Replace `https://github.com/yourusername/hermite-schrodinger-bridge.git` with the actual URL.
+*   Create a `requirements.txt` file listing the necessary Python packages.
+*   Create a `LICENSE` file (typically containing the MIT License text).
+*   Ensure the Python code example correctly reflects the structure and usage of your `hsbm` module.
