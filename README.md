@@ -98,7 +98,7 @@ print("Training finished.")
 print("Generating and visualizing trajectories...")
 model.visualize_trajectories(num_points=50) # Visualize trajectories of 50 points
 print("Visualization complete.")
-
+```
 
 ## 🧠 Mathematical Background
 
@@ -115,7 +115,7 @@ Our key contribution lies in parameterizing the *adjusted Schrödinger potential
 $$
 v_\theta(x) = H_K(x)^T Q H_K(x) e^{-|x|^2/2}
 $$
-```
+
 where:
 *   `$H_K(x)$` is a vector containing multivariate Hermite polynomials up to a certain degree $K$.
 *   `$Q$` is a positive semidefinite matrix parameterized as `$Q = LL^T$` using its Cholesky-like decomposition (specifically, $L$ is the matrix learned via gradient descent).
