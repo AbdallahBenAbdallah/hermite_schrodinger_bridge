@@ -100,6 +100,40 @@ model.visualize_trajectories(num_points=50) # Visualize trajectories of 50 point
 print("Visualization complete.")
 
 
+## 🧠 Mathematical Background
+
+The Schrödinger Bridge problem aims to find a probability path $P$ on the space of trajectories that minimizes the Kullback-Leibler (KL) divergence with respect to a reference Wiener process measure $W^\epsilon$, subject to matching the given initial ($p_0$) and final ($p_1$) marginal distributions:
+
+$$
+\min_{P \in \mathcal{F}(p_0, p_1)} \text{KL}(P\|W^\epsilon)
+$$
+
+where $\mathcal{F}(p_0, p_1)$ is the set of probability measures with marginals $p_0$ and $p_1$ at times $t=0$ and $t=1$, and $W^\epsilon$ corresponds to a Brownian motion with variance $\epsilon$.
+
+Our key contribution lies in parameterizing the *adjusted Schrödinger potential* $v_\theta(x)$ using a **sum-of-squares (SOS) of multivariate Hermite polynomials**:
+
+$$
+v_\theta(x) = H_K(x)^T Q H_K(x) e^{-|x|^2/2}
+$$
+```
+where:
+*   `$H_K(x)$` is a vector containing multivariate Hermite polynomials up to a certain degree $K$.
+*   `$Q$` is a positive semidefinite matrix parameterized as `$Q = LL^T$` using its Cholesky-like decomposition (specifically, $L$ is the matrix learned via gradient descent).
+*   The term `$e^{-|x|^2/2}$` relates the potential to the standard Gaussian measure, simplifying calculations involving Hermite polynomials.
+
+This specific parameterization allows for an **analytical, closed-form expression for the drift function**, which is crucial for simulating the forward generative process and performing efficient training.
+
+---
+
+## 📚 References
+
+For more details, please refer to the original papers:
+
+1.  Ben Abdallah, N., & Dlala, M. (2022). **Hermite Schrödinger Bridge Matching.** *Journal of Machine Learning Research*, 23(296), 1-29.
+2.  Shi, Y., De Bortoli, V., Campbell, A., & Doucet, A. (2023). **Diffusion Schrödinger Bridge Matching.** *Advances in Neural Information Processing Systems (NeurIPS)*, 36.
+3.  Léonard, C. (2013). **A survey of the Schrödinger problem and some of its connections with optimal transport.** *Discrete & Continuous Dynamical Systems-A*, 34(4), 1533-1574.
+
+---
 
 ## 📄 License
 
